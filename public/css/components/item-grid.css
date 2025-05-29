@@ -1,0 +1,148 @@
+.item-grid { 
+    /* .glass and .glass--dark are applied in HTML on the page */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--sp-lg);
+    width: max-content;
+    max-width: 668px;
+    margin: auto;
+}
+#social .item-grid {
+    max-width: none; /* Allow it to take full width */
+}
+.item-grid.item-dark{
+    /* Class for dark theme item */
+}
+
+
+.item-grid__item { 
+    position: relative; 
+    z-index: var(--z-component); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 90px;
+    transition: z-index 0s step-end 0.3s; 
+    transition-delay: 0s; /* Apply hover z-index immediately */
+}
+
+.item-grid__item:hover {
+    z-index: calc(var(--z-component) + 5); /* Higher z-index on hover */
+}
+
+
+.item-grid__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--clr-text-muted);
+    transition: color var(--trans-dur-fast) var(--trans-timing-ease),
+                transform var(--trans-dur-medium) var(--trans-timing-snap);
+    padding: var(--sp-sm);
+    border-radius: var(--radius-md);
+}
+
+.item-grid.item-dark .item-grid__link {
+    color: var(--clr-text-dark);
+}
+
+.item-grid__link:hover, 
+.item-grid__link:focus-visible { 
+    color: var(--clr-accent);
+    transform: scale(1.1);
+}
+
+.item-grid.item-dark .item-grid__link:hover,
+.item-grid.item-dark .item-grid__link:focus-visible { 
+    color: var(--clr-accent-darker);
+    transform: scale(1.1);
+}
+
+
+.item-grid__text { 
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-regular);
+    text-transform: capitalize;
+    margin-top: var(--sp-xs);
+}
+
+.item-grid__preview { 
+    /* .glass and .glass--dark applied in HTML */
+    position: absolute;
+    top: calc(100% + var(--sp-sm) + 2px); /* Add small gap */
+    left: 50%;
+    transform: translateX(-50%) scale(0.85);
+    transform-origin: top center;
+    opacity: 0;
+    visibility: hidden;
+    min-width: 170px;
+    max-width: 260px;
+    z-index: var(--z-dropdown); 
+    pointer-events: none;
+    transition: opacity var(--trans-dur-medium) var(--trans-timing-ease), 
+                visibility var(--trans-dur-medium) var(--trans-timing-ease),
+                transform var(--trans-dur-medium) var(--trans-timing-ease);
+}
+
+.item-grid__preview.compact {
+    min-width: auto;
+    padding: var(--fs-xs);
+}
+
+.item-grid__preview-text { 
+    font-size: var(--fs-sm);
+    color: var(--clr-text);
+    line-height: var(--lh-normal);
+    margin: 0;
+}
+
+.item-grid__item:hover .item-grid__preview {
+    opacity: 1;
+    visibility: visible;
+    animation: jelly-bounce 0.5s var(--trans-timing-snap) forwards;
+}
+
+@keyframes jelly-bounce {
+    0%   { transform: translateX(-50%) scale(0.85); opacity: 0.6; }
+    50%  { transform: translateX(-50%) scale(1.1); opacity: 1; }
+    80%  { transform: translateX(-50%) scale(0.95); }
+    100% { transform: translateX(-50%) scale(1); opacity: 1; }
+}
+
+/* Compact version for contact page */
+.item-grid--compact {
+    gap: var(--sp-md) !important; 
+    width: max-content !important; 
+}
+.item-grid--compact .item-grid__item {
+    min-width: auto;
+}
+.item-grid--compact .item-grid__link {
+    padding: var(--sp-xs);
+}
+.item-grid--compact .item-grid__text {
+    font-size: var(--fs-xs);
+}
+.item-grid--compact .item-grid__preview {
+    min-width: 130px;
+    max-width: 200px;
+}
+.item-grid--compact .item-grid__preview-text {
+    font-size: var(--fs-xs);
+}
+
+@media (max-width: 768px) { /* Changed from 480px to match other similar breakpoints */
+    .item-grid {  
+        gap: var(--sp-md); 
+        width: 100%; /* Allow it to take full width on small screens */
+        justify-content: space-around; /* Better distribution on small screens */
+        /* width: min-content; /* This might make it too small */
+    }
+    .item-grid__preview { 
+        max-width: calc(100vw - var(--sp-lg));
+    }
+}

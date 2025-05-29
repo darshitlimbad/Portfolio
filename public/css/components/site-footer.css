@@ -1,0 +1,15 @@
+.site-footer-component { /* Class on the div rendered by Footer.php */
+    /* .glass and .glass--dark are applied in PHP */
+    padding: var(--sp-md) var(--sp-lg); /* Override .glass padding if needed */
+    text-align: center;
+    font-size: var(--fs-sm);
+    color: var(--clr-text-muted);
+    border-top: var(--border-width-thin) solid var(--clr-border-dark); /* Subtle top border */
+}
+
+.site-footer__text {
+    margin: var(--sp-xs) 0;
+}
+.site-footer__text:first-child {
+    font-weight: var(--fw-bold);
+}

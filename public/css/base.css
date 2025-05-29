@@ -1,0 +1,152 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    font-size: 100%; 
+    line-height: var(--lh-normal);
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--clr-text);
+    background-color: var(--clr-bg-dark);
+    min-height: 100vh;
+    overflow-x: hidden; 
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input, button, textarea, select {
+    font: inherit;
+    border: none;
+    background-color: transparent;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+*:focus-visible {
+    outline: var(--border-width-md) solid var(--clr-accent);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(var(--clr-primary-rgb), 0.2);
+}
+
+::-webkit-scrollbar {
+    display: none; /* Hides scrollbar for WebKit browsers */
+    width: 0; /* Hides scrollbar for WebKit browsers */
+    height: 0;
+}
+
+/* Apparentaly now this pseudo element doesn't work -_-*/
+/* ::-webkit-resizer {
+    cursor: default;
+} */
+
+body {
+    scrollbar-width: none; /* Hides scrollbar for Firefox */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+input, textarea {
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+::selection {
+    background-color: rgba(var(--clr-primary-rgb), 0.8);
+    color: var(--clr-text);
+    text-shadow: none;
+    cursor: url(../media/cursor/dark/copy_32.svg),auto;
+}
+
+.site-wrapper {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.site-wrapper::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--bg-img-main);
+    background-color: var(--clr-bg-canvas);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: var(--z-bg-pseudo);
+    transition: filter var(--trans-dur-medium) var(--trans-timing-ease);
+}
+
+body.blur-bg-active .site-wrapper::before {
+    filter: blur(6px);
+}
+
+.nav, .main-content, .site-footer-component { /* Adjusted to .site-footer-component for the actual footer content */
+    position: relative; 
+    z-index: var(--z-base); 
+}
+.site-footer { /* The wrapper div in BaseLayout for positioning context */
+    position: relative;
+    z-index: var(--z-base);
+    margin-top: auto; /* Pushes footer to bottom if .site-wrapper is flex */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-tight);
+    color: var(--clr-text);
+}
+
+h1 { font-size: var(--fs-display); }
+h2 { font-size: var(--fs-xxl); }
+h3 { font-size: var(--fs-xl); }
+h4 { font-size: var(--fs-lg); }
+
+a {
+    color: var(--clr-text); 
+    text-decoration: none;
+    transition: var(--trans-colors);
+}
+a:hover, a:focus-visible {
+    color: var(--clr-accent);
+    text-decoration: none; /* Often preferred in modern designs */
+}
+
+.main-content { 
+    flex-grow: 1; /* Allows main content to take available space */
+    display: flex; /* To allow for .container--home-layout to work effectively */
+    flex-direction: column; /* Stack children vertically */
+}
+
+body#social .main-content, body#technologies .main-content{
+    justify-content: center;
+}

@@ -1,0 +1,23 @@
+.icon {
+    display: inline-block;
+    width: 0.8em; 
+    height: 0.9em;
+    fill: currentColor;
+    stroke: none; /* Ensure stroke is none if paths use stroke */
+    vertical-align: -0.125em; 
+    transition: transform var(--trans-dur-fast) var(--trans-timing-ease);
+}
+
+.icon--md { width: 1.5em; height: 1.5em; }
+.icon--lg { width: 2em; height: 2em; }
+.icon--xlg { width: 3em; height: 3em; }
+
+.icon--grid { /* Used with grid */
+    font-size: var(--fs-xl); /* Base size for social icons */
+    transition: none;
+}
+
+.icon--contact { /* Used in .info-block__detail */
+    font-size: var(--fs-lg); /* Slightly smaller than social icons */
+    color: var(--clr-accent); /* Explicit color */
+}

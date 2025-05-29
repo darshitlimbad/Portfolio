@@ -1,0 +1,24 @@
+{
+  "title": "What Others Say",
+  "testimonials": [
+    {
+      "id": "testimonial-1",
+      "quote": "Darshit's work ethic and technical skills are top-notch, and he was a pleasure to work with. Highly recommended!",
+      "cite": "- Colleague Name, Title/Company",
+      "isVisibleInitially": true 
+    },
+    {
+      "id": "testimonial-2",
+      "quote": "He delivered outstanding results on our project and was incredibly responsive and proactive throughout the process.",
+      "cite": "- Client Name, Company",
+      "isVisibleInitially": false
+    },
+    {
+      "id": "testimonial-3",
+      "quote": "Outstanding developer! Professional, efficient, and delivered exactly what was needed.",
+      "cite": "- Another Testifier",
+      "isVisibleInitially": false
+    }
+  ],
+  "glassEffect": "glass--dark" 
+}

@@ -1,0 +1,144 @@
+/* === Global Layout Containers === */
+.container {
+    width: 100%;
+    max-width: 1200px; 
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--sp-lg); 
+    padding-right: var(--sp-lg);
+}
+
+.container--fluid {
+    max-width: 100%;
+    padding-left: var(--sp-md);
+    padding-right: var(--sp-md);
+}
+
+/* Specific layout for the home page intro area */
+.container--home-layout {
+    flex-grow: 1; /* Allows it to take available vertical space in main-content if main-content is flex */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: flex-start; /* Aligns .intro block to the left as requested */
+    padding-left: 10%;       /* Creates the left offset */
+    padding-right: 5%;        /* Some padding on the right */
+    text-align: left;         /* Default text alignment for content within */
+    min-height: calc(100vh - var(--navbar-height, 60px) - var(--sp-xl)); /* Ensures it tries to fill viewport height minus navbar */
+}
+
+@media (max-width: 900px) { /* Adjust breakpoint as needed */
+    .container--home-layout {
+        padding-left: var(--sp-xl);
+        padding-right: var(--sp-xl);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-left: var(--sp-md);
+        padding-right: var(--sp-md);
+    }
+    .container--home-layout {
+        align-items: center; /* Center content on smaller screens */
+        padding-left: var(--sp-md); /* More standard padding on mobile */
+        padding-right: var(--sp-md);
+        min-height: calc(100vh - var(--navbar-height-mobile, 56px) - var(--sp-lg));
+    }
+}
+
+/* === Page Content Wrapper === */
+.page-content {
+    padding-top: var(--sp-xl);    /* Default top padding for page content sections */
+    padding-bottom: var(--sp-xxl); /* Default bottom padding */
+    position: relative; 
+    z-index: var(--z-base);
+}
+/* Optional: if navbar is sticky and part of flow, first .page-content might need less top padding */
+/* .site-wrapper > .nav + .main-content > .page-content:first-child {
+    padding-top: var(--sp-lg);
+} */
+
+
+/* Page-specific modifiers (mostly for semantic grouping in HTML) */
+.page-content--about {}
+.page-content--projects {}
+.page-content--social {}
+.page-content--contact {}
+
+
+/* === Glassmorphism Base Styles === */
+.glass {
+    border-radius: var(--radius-lg);
+    background: var(--clr-glass-bg-base); /* Default glass background */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: var(--border-width-thin) solid var(--clr-glass-border-base); /* Default glass border */
+    box-shadow: var(--shadow-sm); /* Softer default shadow */
+    padding: var(--sp-lg); /* Default padding for glass elements */
+    transition: background-color var(--trans-dur-medium) var(--trans-timing-ease),
+                border-color var(--trans-dur-medium) var(--trans-timing-ease),
+                box-shadow var(--trans-dur-medium) var(--trans-timing-ease);
+}
+
+.glass.glass--dark {
+    background: var(--clr-glass-bg-dark);
+    border-color: var(--clr-glass-border-dark);
+}
+
+.glass.glass--accent {
+    background: var(--clr-glass-bg-accent);
+    border-color: var(--clr-glass-border-accent);
+}
+
+/* === Image Overlay Effect === */
+.img-overlay {
+    position: relative;
+    overflow: hidden;    /* Crucial for ::before to respect border-radius */
+    border-radius: inherit; /* Inherit border-radius from parent (e.g., .acard__img-wrap) */
+}
+
+.img-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit; /* Ensure pseudo-element also respects the inherited radius */
+    background: linear-gradient(135deg, rgba(var(--clr-primary-rgb), 0.1), rgba(255, 255, 255, 0.02));
+    z-index: var(--z-content-overlay);
+    mix-blend-mode: overlay; 
+    pointer-events: none;
+    transition: background var(--trans-dur-medium) var(--trans-timing-ease);
+}
+
+.img-overlay:hover::before {
+    background: linear-gradient(135deg, rgba(var(--clr-primary-rgb), 0.2), rgba(255, 255, 255, 0.04));
+}
+
+/* === General Page Header Styling === */
+/* This is for the <header class="pg-header"> used on multiple pages */
+.pg-header {
+    text-align: center;
+    padding-bottom: var(--sp-lg); 
+    margin-bottom: var(--sp-xl); /* Space after header before page-specific content */
+}
+.pg-header__title {
+    font-size: var(--fs-xxl); /* Large page titles */
+    color: var(--clr-text);
+    margin-bottom: var(--sp-sm);
+    font-weight: var(--fw-black);
+    line-height: var(--lh-tight);
+}
+.pg-header__desc {
+    font-size: var(--fs-md);
+    color: var(--clr-text-muted);
+    max-width: 65ch; /* Limit line length for readability */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: var(--lh-relaxed);
+    transition: color var(--trans-dur-medium) var(--trans-timing-ease), opacity var(--trans-dur-medium) var(--trans-timing-ease);
+}
+
+.pg-header__desc:hover {
+    color: var(--clr-text);
+    opacity: 1; /* Ensure it becomes fully opaque on hover */
+}

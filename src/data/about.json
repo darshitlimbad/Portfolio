@@ -1,0 +1,57 @@
+[
+  {
+    "id": "who-i-am",
+    "topic": "$whoami",
+    "title": "I am Darshit Limbad",
+    "text": "Developer by profession, creator by passion. \nI craft immersive digital experiences ranging from dynamic game worlds to intuitive web interfaces. My focus is on delivering solutions that are both visually compelling and technically robust.",
+    "glassEffect": "glass--dark"
+  },
+  {
+    "id": "unreal-engine-exp",
+    "imageSrc": "/public/media/about/unreal-screenshot.webp",
+    "altText": "Screenshot of a complex scene within the Unreal Engine editor",
+    "topic": "$UnrealEngine",
+    "title": "Experienced in Unreal Engine",
+    "text": "I build interactive worlds in Unreal Engine using Blueprints and C++. Whether it's designing gameplay logic, creating custom materials, or integrating UI systems, I focus on delivering polished and engaging player experiences. I'm passionate about learning new systems, from behavior trees to replication, and enjoy pushing the engine to its limits.",
+    "imagePosition": "right",
+    "glassEffect": "glass--dark"
+  },
+  {
+    "id": "web-dev-focus",
+    "imageSrc": "/public/media/about/web-dev-photo.jpg",
+    "altText": "A clean and modern web development coding setup",
+    "topic": "$WebDev",
+    "title": "Full-Stack Web Development",
+    "text": "Full-Stack Web Developer skilled in HTML5, CSS3, JavaScript, PHP, MySQL, and JSON-based API creation. I build responsive UIs, develop secure back-end systems, and integrate RESTful endpoints for smooth data exchange.",
+    "imagePosition": "left",
+    "glassEffect": "glass--dark"
+  },
+  {
+    "id": "passion-for-systems",
+    "topic": "$systems",
+    "title": "Passionate About Systems",
+    "text": "I thrive on designing and implementing architectures that work seamlessly and feel intuitive whether it’s a responsive web application, a gameplay mechanic in-engine, or a reliable backend service. I take a holistic approach: defining clear data flows, crafting clean interfaces, and optimizing performance at every layer. By marrying thoughtful design with robust engineering, I ensure each system not only meets functional requirements but also delights users with its fluidity and responsiveness.",
+    "glassEffect": "glass--dark"
+  },
+  {
+    "id": "tech-expertise",
+    "topic": "$TechnicalExpertise",
+    "title": "Version Control & DevOps",
+    "text": "Proficient in Git version control and branching strategies, with hands-on experience in pull requests and code reviews GitHub Actions to automate testing and deployments.",
+    "glassEffect": "glass--dark"
+  },
+  {
+    "id": "continuous-learning",
+    "topic": "$Learning",
+    "title": "Continuous Exploration",
+    "text": "Always experimenting with new engine functionalities, languages, and libraries recently explored Pixel Streaming, Multiplayer System, Dynamic UI Creation in Unreal Engine and Astro in Node.js. Actively engaged in community forums like Unreal Engine forums.",
+    "glassEffect": "glass--dark"
+  },
+  {
+    "id": "impact-mindset",
+    "topic": "$Mindset",
+    "title": "Impact-Driven Problem Solving",
+    "text": "Driven by curiosity and care, I thrive on solving tough logic challenges and tracking down elusive bugs. I always design with the end user in mind. It's not just about clean code; it's about creating experiences that feel meaningful and intuitive.",
+    "glassEffect": "glass--dark"
+  }
+]

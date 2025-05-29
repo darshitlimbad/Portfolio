@@ -1,0 +1,219 @@
+.contact-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-xl);
+    align-items: flex-start;
+}
+
+.contact-col {
+    flex: 1 1 400px; /* Base size, allows wrapping */
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-xl); /* Space between blocks within info column */
+}
+.contact-col--form {
+    /* .glass .glass--dark applied in HTML */
+    min-width: 300px; /* Ensure form has decent min width */
+}
+.contact-col--info {
+    min-width: 300px;
+}
+
+/* Contact Form */
+.c-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-lg);
+}
+.c-form__title {
+    font-size: var(--fs-xl);
+    margin-bottom: var(--sp-sm); /* Reduced margin */
+    color: var(--clr-text);
+    text-align: left; /* Align to left for typical form */
+    font-weight: var(--fw-bold);
+}
+.c-form__group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-xs);
+}
+.c-form__label {
+    font-size: var(--fs-base);
+    color: var(--clr-text-muted);
+    font-weight: var(--fw-regular);
+}
+.c-form__input,
+.c-form__textarea {
+    font-family: var(--font-primary);
+    font-size: var(--fs-base);
+    padding: var(--sp-sm) var(--sp-md);
+    border-radius: var(--radius-md);
+    border: var(--border-width-thin) solid var(--clr-border-light);
+    background: rgba(var(--clr-bg-dark-rgb, 18, 18, 24), 0.5); /* Slightly different bg for inputs */
+    color: var(--clr-text);
+    transition: border-color var(--trans-dur-fast) var(--trans-timing-ease), 
+                box-shadow var(--trans-dur-fast) var(--trans-timing-ease);
+}
+.c-form__input:focus,
+.c-form__textarea:focus {
+    outline: none;
+    border-color: var(--clr-accent);
+    box-shadow: 0 0 0 3px rgba(var(--clr-primary-rgb), 0.2);
+}
+.c-form__textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+.c-form__btn { /* For .btn.btn--primary.c-form__btn */
+    align-self: flex-start; /* Align button to left */
+    margin-top: var(--sp-sm);
+}
+
+/* Info Block (Direct contact, social links on contact page) */
+.info-block { /* .glass .glass--dark applied in HTML */
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-lg); /* Space between sections in info-block */
+}
+.info-block__section {
+    /* No specific styling, acts as a grouping element */
+}
+.info-block__title {
+    font-size: var(--fs-lg);
+    margin-bottom: var(--sp-md);
+    color: var(--clr-text);
+    font-weight: var(--fw-bold);
+}
+.info-block__detail {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-sm);
+    font-size: var(--fs-base);
+    color: var(--clr-text-muted);
+}
+.info-block__detail .link { /* Link specific to info block detail */
+    color: var(--clr-text-muted);
+    transform: translateY(-0.16rem);
+}
+.info-block__detail .link:hover {
+    color: var(--clr-accent);
+}
+.info-block__more-links {
+    text-align: right; /* Align "view all" link to right */
+    margin-top: var(--sp-md);
+}
+.info-block__more-links .link {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-bold);
+}
+
+/* Reasons Block */
+.reasons-block { /* .glass .glass--accent .card .js-reveal in HTML */
+    /* Styles for this specific block */
+}
+.reasons-block__title {
+    font-size: var(--fs-lg);
+    margin-bottom: var(--sp-sm);
+    color: var(--clr-text);
+    font-weight: var(--fw-bold);
+}
+.reasons-block__intro {
+    font-size: var(--fs-base);
+    color: var(--clr-text-muted);
+    margin-bottom: var(--sp-md);
+}
+.reasons-block__list {
+    display: grid;
+    gap: var(--sp-sm);
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* For multi-column list if desired */
+}
+.reasons-block__item {
+    background-color: rgba(255, 255, 255, 0.03); /* Subtle background for list items */
+    padding: var(--sp-sm) var(--sp-md);
+    border-radius: var(--radius-md);
+    font-size: var(--fs-base);
+    color: var(--clr-text-muted);
+}
+.reasons-block__item:hover {
+    color: var(--clr-text);
+}
+
+
+/* Testimonials Block */
+.testimonials-block { /* .glass .glass--dark .card .js-testimonial-rotator .js-reveal in HTML */
+    /* Styles for this block */
+}
+.testimonials-block__title {
+    font-size: var(--fs-lg);
+    margin-bottom: var(--sp-md);
+    color: var(--clr-text);
+    font-weight: var(--fw-bold);
+}
+.testimonial-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 120px; /* Ensure space for content, adjust as needed */
+    overflow: hidden;
+;
+}
+.testimonial-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--trans-dur-slow) var(--trans-timing-ease), 
+                visibility var(--trans-dur-slow) var(--trans-timing-ease);
+    /* animation for JS reveal handled by .card */
+}
+.testimonial-item.is-visible { /* Added by JS for rotator */
+    opacity: 1;
+    visibility: visible;
+    position: relative; /* Take up space when visible */
+}
+.testimonial-item__quote {
+    margin: 0 0 var(--sp-sm) 0;
+    padding: 0;
+    font-size: var(--fs-base);
+    font-style: italic;
+    line-height: var(--lh-relaxed);
+    color: var(--clr-text-muted);
+    quotes: "“" "”" "‘" "’";
+}
+.testimonial-item__quote::before {
+    content: open-quote;
+    font-size: 1.5em; /* Relative to quote font size */
+    color: var(--clr-accent);
+    line-height: 0;
+    margin-right: var(--sp-xs);
+    vertical-align: -0.3em; /* Adjust vertical alignment */
+}
+.testimonial-item__quote::after {
+    content: close-quote;
+    font-size: 1.5em;
+    color: var(--clr-accent);
+    line-height: 0;
+    margin-left: var(--sp-xs);
+    vertical-align: -0.3em;
+}
+.testimonial-item__cite {
+    display: block;
+    font-style: normal;
+    font-weight: var(--fw-bold);
+    color: var(--clr-accent);
+    text-align: right;
+    font-size: var(--fs-sm);
+    margin-top: var(--sp-sm);
+}
+
+
+
+@media (max-width: 768px) {
+    .reasons-block__item {
+        font-size: var(--fs-sm); /* Smaller text for mobile */
+        color: var(--clr-text);
+    }
+}

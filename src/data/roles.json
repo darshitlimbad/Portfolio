@@ -1,0 +1,10 @@
+{
+  "roles": [
+    "$WhoAmI",
+    "$GameDeveloper",
+    "$WebDeveloper",
+    "$Programmer",
+    "$DreamerByNight"
+  ]
+}
+  

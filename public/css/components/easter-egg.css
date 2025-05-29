@@ -1,0 +1,43 @@
+.easter-egg {
+    position: fixed;
+    /* top/left set by JS */
+    opacity: 0;
+    visibility: hidden; /* Hide from AT and interactions until visible */
+    z-index: var(--z-easter-egg);
+    /* .glass .glass--accent applied in HTML for styling if desired */
+    /* Or specific styles here: */
+    background-color: var(--clr-glass-bg-accent);
+    border: var(--border-width-thin) solid var(--clr-glass-border-accent);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-lg);
+    box-shadow: var(--shadow-xl), 0 0 40px var(--clr-accent);
+    transform: scale(0.7) rotate(-5deg);
+    transition: opacity var(--trans-dur-slow) var(--trans-timing-ease),
+                visibility var(--trans-dur-slow) var(--trans-timing-ease), /* Transition visibility too */
+                transform var(--trans-dur-slow) var(--trans-timing-snap);
+}
+
+.easter-egg.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) rotate(0deg);
+}
+
+.easter-egg__link {
+    color: var(--clr-text);
+    text-decoration: none;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-md);
+    display: block;
+    text-align: center;
+}
+.easter-egg__link strong {
+    color: var(--clr-accent); /* Accent color for "Click me" */
+    display: block;
+    margin-top: var(--sp-xs);
+    text-decoration: underline;
+}
+
+.easter-egg__link:hover strong {
+    color: var(--clr-text);
+}

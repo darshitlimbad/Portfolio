@@ -1,0 +1,24 @@
+/* Component Imports */
+@import 'nav.css';            
+@import 'intro.css';          
+@import 'home-footer.css';    
+@import 'site-footer.css'; 
+@import 'acard.css';          
+@import 'pcard.css';          
+@import 'item-grid.css';    
+@import 'contact.css';        
+@import 'buttons.css';        
+@import 'icons.css';          
+@import 'glow-bubbles.css';   
+@import 'easter-egg.css';     
+
+/* Component structural or shared styles */
+.card { 
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s var(--trans-timing-ease), transform 0.5s var(--trans-timing-ease);
+}
+.card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

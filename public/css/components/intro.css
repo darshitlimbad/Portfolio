@@ -1,0 +1,60 @@
+.intro { 
+    /* .card and .glass classes are applied in HTML */
+    /* The container--home-layout handles alignment */
+    /* background-color: var(--clr-glass-bg-dark); */
+    padding: var(--sp-lg); 
+    margin-top: -2em; /* Pull up slightly if needed, adjust based on final layout */
+    z-index: var(--z-component);
+}
+
+.intro__nav-item {
+  display: block;
+  font-family: var(--font-primary);
+  font-size: var(--fs-intro);
+  margin: var(--sp-sm) 0;
+  font-weight: var(--fw-black);
+  
+  color: var(--clr-text);
+  /* Thin purple outline for extra pop on dark bg */
+  -webkit-text-stroke: 0.5px var(--clr-accent);
+  
+  /* Multi-layer shadows: depth + soft glow */
+  text-shadow:
+    /* deep purple “lift” shadow */
+    2px 2px 0 var(--clr-accent-darker),
+    /* mid-tone accent for outline depth */
+    1px 1px 0 var(--clr-accent),
+    /* soft outer glow */
+    0 0 8px rgba(170, 100, 255, 0.6),
+    /* slight ambient black shadow for readability */
+    0 2px 4px rgba(0, 0, 0, 0.4);
+  
+    text-decoration: none;
+    position: relative;
+    line-height: var(--lh-tight);
+    
+    transition:
+        color var(--trans-dur-fast) var(--trans-timing-ease),
+        text-shadow var(--trans-dur-fast) var(--trans-timing-ease),
+        -webkit-text-stroke var(--trans-dur-slow) var(--trans-timing-ease),
+        opacity 0.1s ease;
+}
+
+.intro__nav-item:hover,
+.intro__nav-item:focus-visible {
+    color: transparent;
+    text-shadow: none;
+    -webkit-text-stroke: 3px var(--clr-text);
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .intro {
+        margin-top: 0; /* No pull-up on mobile */
+        padding: var(--sp-md);
+    }
+    .intro__nav-item {
+        font-size: 8vmin; /* Larger text on smaller screens */
+        margin: var(--sp-xs) 0;
+    }
+}

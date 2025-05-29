@@ -1,0 +1,109 @@
+:root {
+    /* Colors */
+    --clr-bg-muted: rgba(230, 240, 255, 0.7); 
+    --clr-bg-dark: #121218; 
+    --clr-bg-canvas: #0e090e;
+    --clr-text: aliceblue;
+    --clr-text-muted: rgba(230, 240, 255, 0.7);
+    --clr-text-dark: #121218; 
+    --clr-primary: #9f00e7; 
+    --clr-primary-rgb: 159, 0, 231;
+    --clr-accent: #d0a0ff;
+    --clr-accent-darker: #8638c3;
+    --clr-border-light: rgba(255, 255, 255, 0.1);
+    --clr-border-dark: rgba(255, 255, 255, 0.05);
+
+    /* Glassmorphism Colors */
+    --clr-glass-bg-base: rgba(var(--clr-primary-rgb), 0.1);
+    --clr-glass-border-base: rgba(var(--clr-primary-rgb), 0.2);
+    --clr-glass-bg-dark:  rgba(10, 10, 20, 0.5);
+    --clr-glass-border-dark: rgba(255, 255, 255, 0.08);
+    --clr-glass-bg-accent: rgba(var(--clr-primary-rgb), 0.25);
+    --clr-glass-border-accent: rgba(var(--clr-primary-rgb), 0.4);
+
+    /* Glow Bubble Colors */
+    --clr-glow-center: rgba(207, 160, 255, 0.25);
+    --clr-glow-edge: rgba(90, 103, 216, 0);
+
+    /* Spacing */
+    --sp-xs: 0.25rem;  /* 4px */
+    --sp-sm: 0.5rem;   /* 8px */
+    --sp-md: 1rem;     /* 16px */
+    --sp-lg: 1.5rem;   /* 24px */
+    --sp-xl: 2.5rem;   /* 40px */
+    --sp-xxl: 4rem;    /* 64px */
+
+    /* Typography */
+    --font-primary: 'Roboto Slab', sans-serif;
+    --fs-base: 1rem;
+    --fs-xs: 0.75rem;
+    --fs-sm: 0.875rem;
+    --fs-md: 1.125rem;
+    --fs-lg: 1.5rem;
+    --fs-xl: 2rem;
+    --fs-xxl: 2.75rem;
+    --fs-display: 3.5rem;
+    --fs-intro: 5vmin; /* Specific to intro component */
+    --fw-regular: 400;
+    --fw-bold: 700;
+    --fw-black: 900;
+    --lh-tight: 1.2;
+    --lh-normal: 1.5;
+    --lh-relaxed: 1.7;
+
+    /* Transitions */
+    --trans-dur-fast: 0.15s;
+    --trans-dur-medium: 0.3s;
+    --trans-dur-slow: 0.5s;
+    --trans-timing-ease: ease-in-out;
+    --trans-timing-snap: cubic-bezier(0.075, 0.82, 0.165, 1);
+    --trans-default: all var(--trans-dur-medium) var(--trans-timing-ease);
+    --trans-snap: all var(--trans-dur-medium) var(--trans-timing-snap);
+    --trans-colors: color var(--trans-dur-fast) var(--trans-timing-ease), 
+                    background-color var(--trans-dur-fast) var(--trans-timing-ease), 
+                    border-color var(--trans-dur-fast) var(--trans-timing-ease);
+
+    /* Borders & Radii */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-circle: 50%;
+    --border-width-thin: 1px;
+    --border-width-md: 2px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 6px 12px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 15px 30px rgba(0, 0, 0, 0.2);
+    --shadow-glow-accent: 0 0 20px rgba(var(--clr-primary-rgb), 0.25);
+
+    /* Backgrounds */
+    --bg-img-main: url("/public/media/BG/bg-gif-resize.gif");
+
+    /* Z-Index */
+    --z-bg-pseudo: -1;
+    --z-base: 1;
+    --z-content-overlay: 5;
+    --z-component: 10;
+    --z-dropdown: 50;
+    --z-sticky: 100;
+    --z-modal-backdrop: 800;
+    --z-modal: 900;
+    --z-easter-egg: 999;
+    --z-cursor: 1000; /* Assuming custom cursor is above all */
+
+    /* Component Specific */
+    --navbar-height: 60px;
+    --navbar-height-mobile: 56px;
+    --footer-height: 50px; /* Example */
+
+    /* Scale */
+    --scale-xs: 0.85;
+    --scale-sm: 0.92;
+    --scale-normal: 1;
+    --scale-md: 1.03;
+    --scale-lg: 1.1;
+    --scale-xl: 1.15;
+}
