@@ -98,48 +98,6 @@ The application is built using a component-based architecture, both in PHP and J
 *   **JavaScript Components (`public/js/components/`):** ES6+ JavaScript classes that encapsulate the logic and behavior of interactive UI elements (e.g., a modal, a carousel).
 *   **Layout System (`src/layouts/BaseLayout.php`):** The main layout template that provides the basic HTML structure and placeholders for content, header, and footer.
 
-## Installation
-
-1.  **Clone the repository:**
-
-```bash
-git clone [repository-url]
-cd [repository-name]
-```
-
-2.  **Set up a PHP development environment:**
-    *   Ensure you have PHP installed and configured on your system.
-    *   A web server (e.g., Apache, Nginx) is required to serve the PHP files.
-    *   If using PHP dependencies, run `composer install` in the project root (Composer is optional but recommended).
-
-3.  **Configure your web server:**
-    *   Point your web server's document root to the project's root directory.
-    *   Ensure that PHP is enabled for your web server.
-
-## Usage
-
-1.  **Access the website:**
-    *   Open your web browser and navigate to the URL of your development server (e.g., `http://localhost`).
-
-2.  **Explore the different pages:**
-    *   Use the navigation bar to access the "Home," "About," and "Experience" pages.
-
-3.  **Interact with the JavaScript components:**
-    *   Experiment with the interactive elements on the page (e.g., the Thanos Text effect).
-
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1.  Fork the repository.
-2.  Create a new branch for your feature or bug fix.
-3.  Make your changes and commit them with descriptive messages.
-4.  Push your changes to your fork.
-5.  Submit a pull request to the main repository.
-
-<!-- ## License -->
-
-<!-- This project is licensed under the [MIT License](LICENSE). -->
 
 ## Contact
 
