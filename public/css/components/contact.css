@@ -12,12 +12,13 @@
     align-items: center; /* Center content */
 }
 
-body.is-desktop .contact-col {
+.is-desktop .contact-col {
     flex-direction: row;
     justify-content: center;
 }
-body.is-mobile .contact-col,
-body.screen-medium .contact-col {
+.is-mobile .contact-col,
+.screen-medium .contact-col,
+.screen-small .contact-col {
     flex-direction: column;
 }
 
