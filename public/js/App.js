@@ -67,7 +67,7 @@ export default class App {
         
         // Page-specific initializations
         const pageId = document.body.id;
-        if (pageId !== 'home' || this.deviceInfo.isDesktop) {
+        if (pageId !== 'home' || this.deviceInfo.isMobile) {
             document.body.classList.add('blur-bg-active'); // Activate blur on non-home pages by default
         }
         if (pageId === 'contact') {

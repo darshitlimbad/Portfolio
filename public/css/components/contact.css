@@ -8,10 +8,19 @@
 .contact-col {
     flex: 1 1 400px; /* Base size, allows wrapping */
     display: flex;
-    flex-direction: column;
     gap: var(--sp-xl); /* Space between blocks within info column */
     align-items: center; /* Center content */
 }
+
+body.is-desktop .contact-col {
+    flex-direction: row;
+    justify-content: center;
+}
+body.is-mobile .contact-col,
+body.screen-medium .contact-col {
+    flex-direction: column;
+}
+
 .contact-col--form {
     /* .glass .glass--dark applied in HTML */
     min-width: 300px; /* Ensure form has decent min width */
