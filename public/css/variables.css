@@ -80,7 +80,7 @@
     --shadow-glow-accent: 0 0 20px rgba(var(--clr-primary-rgb), 0.25);
 
     /* Backgrounds */
-    --bg-img-main: url("/public/media/BG/bg-gif-resize.gif");
+    --bg-img-main: url("https://darshitlimbad.github.io/GitPages/Portfolio/media/BG/bg-resize.gif");
 
     /* Z-Index */
     --z-bg-pseudo: -1;

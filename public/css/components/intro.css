@@ -5,6 +5,7 @@
     padding: var(--sp-lg); 
     margin-top: -2em; /* Pull up slightly if needed, adjust based on final layout */
     z-index: var(--z-component);
+    min-width: 21rem;
 }
 
 .intro__nav-item {
@@ -57,4 +58,22 @@
         font-size: 8vmin; /* Larger text on smaller screens */
         margin: var(--sp-xs) 0;
     }
+
+    .intro__nav-item:hover,
+    .intro__nav-item:focus-visible {
+        color: var(--clr-text);
+        /* Multi-layer shadows: depth + soft glow */
+        text-shadow:
+            /* deep purple “lift” shadow */
+            2px 2px 0 var(--clr-text-dark),
+            /* mid-tone accent for outline depth */
+            1px 1px 0 var(--clr-accent),
+            /* soft outer glow */
+            0 0 8px rgba(170, 100, 255, 0.6),
+            /* slight ambient black shadow for readability */
+            0 2px 4px rgba(0, 0, 0, 0.4);
+        /* Thin purple outline for extra pop on dark bg */
+        -webkit-text-stroke: 0.5px var(--clr-accent);
+    }
+
 }

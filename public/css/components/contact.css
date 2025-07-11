@@ -10,6 +10,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--sp-xl); /* Space between blocks within info column */
+    align-items: center; /* Center content */
 }
 .contact-col--form {
     /* .glass .glass--dark applied in HTML */
@@ -73,7 +74,8 @@
 .info-block { /* .glass .glass--dark applied in HTML */
     display: flex;
     flex-direction: column;
-    gap: var(--sp-lg); /* Space between sections in info-block */
+    gap: var(--sp-lg); 
+    min-width: 490px;
 }
 .info-block__section {
     /* No specific styling, acts as a grouping element */
@@ -86,7 +88,7 @@
 }
 .info-block__detail {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     gap: var(--sp-sm);
     font-size: var(--fs-base);
     color: var(--clr-text-muted);
@@ -212,6 +214,10 @@
 
 
 @media (max-width: 768px) {
+    .info-block {
+        min-width: auto;
+    }
+    
     .reasons-block__item {
         font-size: var(--fs-sm); /* Smaller text for mobile */
         color: var(--clr-text);
