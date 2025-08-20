@@ -11,11 +11,11 @@
     $content = <<<HTML
     <div class="container container--fluid container--home-layout">
         <div class="intro card">
-            <h1 class="intro__nav-item" data-cursor-alias data-newtext="I'm a..." data-url="about.php">Hello!</h1>
-            <h1 class="intro__nav-item" data-cursor-alias data-newtext="My Projects" data-url="experience.php">Experience</h1>
-            <h1 class="intro__nav-item" data-cursor-alias data-newtext="Media" data-url="social.php">Social</h1>
-            <h1 class="intro__nav-item" data-cursor-alias data-newtext="Check Out" data-url="technologies.php">My Tech-Stack</h1>
-            <h1 class="intro__nav-item" data-cursor-alias data-newtext="Let's Connect" data-url="contact.php">Get in Touch</h1>
+            <h1 class="intro__nav-item" data-cursor-alias data-newtext="I'm a..." data-url="./about.php">Hello!</h1>
+            <h1 class="intro__nav-item" data-cursor-alias data-newtext="My Projects" data-url="./experience.php">Experience</h1>
+            <h1 class="intro__nav-item" data-cursor-alias data-newtext="Media" data-url="./social.php">Social</h1>
+            <h1 class="intro__nav-item" data-cursor-alias data-newtext="Check Out" data-url="./technologies.php">My Tech-Stack</h1>
+            <h1 class="intro__nav-item" data-cursor-alias data-newtext="Let's Connect" data-url="./contact.php">Get in Touch</h1>
         </div>
 
         <footer class="home-footer">
