@@ -15,8 +15,7 @@ export default class App {
             new ThanosText(),      // Uses .intro__nav-item 
             new LinkAlias(),       // Uses data-url
             new WhoAmI(),          // Uses #whoami
-            new BackgroundLoader('public/media/BG/bg.gif', '--bg-img-main', this.onBackgroundImageLoaded),// Uses --bg-img-main 
-            // new BackgroundLoader('https://darshitlimbad.github.io/GitPages/Portfolio/media/BG/bg.gif', '--bg-img-main', this.onBackgroundImageLoaded),// Uses --bg-img-main 
+            new BackgroundLoader('https://darshitlimbad.github.io/GitPages/Portfolio/media/BG/bg.gif', '--bg-img-main', this.onBackgroundImageLoaded),// Uses --bg-img-main 
             // new EasterEgg()        // Uses #easter-egg
         ];    
         
