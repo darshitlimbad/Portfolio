@@ -35,6 +35,9 @@
 
     /* Typography */
     --font-primary: 'Roboto Slab', sans-serif;
+    --font-fira-mono: "Fira Mono", monospace;
+    --font-doto: "Doto", sans-serif;
+
     --fs-base: 1rem;
     --fs-xs: 0.75rem;
     --fs-sm: 0.875rem;

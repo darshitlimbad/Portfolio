@@ -21,7 +21,7 @@
     flex-direction: column;
     justify-content: center; 
     align-items: flex-start; /* Aligns .intro block to the left as requested */
-    padding-left: 10%;       /* Creates the left offset */
+    padding-left: 20%;       /* Creates the left offset */
     padding-right: 5%;        /* Some padding on the right */
     text-align: left;         /* Default text alignment for content within */
     min-height: calc(100vh - var(--navbar-height, 60px) - var(--sp-xl)); /* Ensures it tries to fill viewport height minus navbar */

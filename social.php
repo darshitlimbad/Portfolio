@@ -1,6 +1,6 @@
 <?php
     $pageId = "social";
-    $pageTitle = "Social Media — Darshit Limbad";
+    $pageTitle = "Social Media - Darshit Limbad";
 
     $pageMeta = [
         'description' => "Connect with Darshit Limbad across various social media platforms. Find links to GitHub, LinkedIn, Twitter (X), Instagram, and more.",

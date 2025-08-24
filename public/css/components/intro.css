@@ -5,7 +5,7 @@
     padding: var(--sp-lg); 
     margin-top: -2em; /* Pull up slightly if needed, adjust based on final layout */
     z-index: var(--z-component);
-    min-width: 30rem;
+    /* min-width: 30rem; */
 }
 
 .screen-small .intro{
@@ -14,45 +14,37 @@
 
 
 .intro__nav-item {
-  display: block;
-  font-family: var(--font-primary);
-  font-size: var(--fs-intro);
-  margin: var(--sp-sm) 0;
-  font-weight: var(--fw-black);
-  
-  color: var(--clr-text);
-  /* Thin purple outline for extra pop on dark bg */
-  -webkit-text-stroke: 0.5px var(--clr-accent);
-  
-  /* Multi-layer shadows: depth + soft glow */
-  text-shadow:
-    /* deep purple “lift” shadow */
-    2px 2px 0 var(--clr-accent-darker),
-    /* mid-tone accent for outline depth */
+    display: block;
+    font-family: var(--font-doto);
+    font-weight: var(--fw-black);
+    font-size: var(--fs-intro);
+    margin: var(--sp-sm) 0;
+    color: var(--clr-text-muted);
+    /* -webkit-text-stroke: 0.5px var(--clr-accent); */
+    /* text-shadow: 2px 2px 0 var(--clr-accent-darker),
+    
     1px 1px 0 var(--clr-accent),
-    /* soft outer glow */
+    
     0 0 8px rgba(170, 100, 255, 0.6),
-    /* slight ambient black shadow for readability */
-    0 2px 4px rgba(0, 0, 0, 0.4);
-  
+    
+    0 2px 4px rgba(0, 0, 0, 0.4); */
     text-decoration: none;
     position: relative;
     line-height: var(--lh-tight);
-    
-    transition:
-        color var(--trans-dur-fast) var(--trans-timing-ease),
+    /* transition: color var(--trans-dur-fast) var(--trans-timing-ease),
         text-shadow var(--trans-dur-fast) var(--trans-timing-ease),
         -webkit-text-stroke var(--trans-dur-slow) var(--trans-timing-ease),
-        opacity 0.1s ease;
+        opacity 0.1s ease; */
 }
 
 /* DESKTOP HOVER: This style will apply on mouse hover for non-touch devices */
 .intro__nav-item:hover,
 .intro__nav-item:focus-visible {
-    color: transparent;
+    font-family: var(--font-fira-mono);
+    color: var(--clr-text);
     text-shadow: none;
-    -webkit-text-stroke: 3px var(--clr-text);
     font-style: italic;
+
 }
 
 
@@ -83,4 +75,72 @@
         -webkit-text-stroke: 0.5px var(--clr-accent);
     }
 
+}
+
+
+.interaction-tip {
+    position: fixed;
+    bottom: 10%;           /* Keep at bottom */
+    right: 0;            /* Change from left:0 to right:0 */
+    transform: translateY(0); 
+    background: var(--clr-glass-border-base);
+    color: var(--clr-text);
+    font-family: var(--font-fira-mono),'Courier New', monospace;
+    padding: 10px 18px;
+    border-top-left-radius: 12px;    /* Change border radius from right side to left side */
+    border-bottom-left-radius: 12px;
+    box-shadow: -2px 2px 12px rgba(159, 0, 231, 0.5);  /* Adjust shadow direction */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    z-index: 9999;
+    user-select: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+.interaction-tip.hidden {
+    opacity: 0;
+    transform: translateX(100%) translateY(50%);
+    pointer-events: none;
+}
+
+.interaction-tip .icon {
+    font-size: 1.3rem;
+    animation: bounce 1.5s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+.tip-close {
+    background: transparent;
+    border: none;
+    color: #e6f0ff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0 6px;
+    font-weight: bold;
+    line-height: 1;
+    user-select: none;
+}
+
+.mobile-message {
+    display: none;
+}
+
+.desktop-message {
+    display: inline;
+}
+
+@media (max-width: 768px) {
+    .mobile-message {
+        display: inline;
+    }
+    .desktop-message {
+        display: none;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
     $pageId = "contact";
-    $pageTitle = "Let's Connect — Darshit Limbad";
+    $pageTitle = "Let's Connect - Darshit Limbad";
 
     $pageMeta = [
         'description' => "Get in touch with Darshit Limbad. Whether you have a project idea, a question, or just want to connect, use the contact form or find direct contact details.",

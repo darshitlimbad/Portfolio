@@ -2,18 +2,22 @@ import { ThanosText } from './components/ThanosText.js';
 import { LinkAlias } from './components/LinkAlias.js';
 import { WhoAmI } from './components/WhoAmI.js';
 import { BackgroundLoader } from './components/BackgroundLoader.js';
-import { EasterEgg } from './components/EasterEgg.js';
+// import { EasterEgg } from './components/EasterEgg.js';
 import { initScrollReveal } from './utils/scrollReveals.js';
 import { initTestimonialRotator } from './utils/testimonialRotator.js';
 
 export default class App {
     constructor() {
+
+        this.onBackgroundImageLoaded = this.onBackgroundImageLoaded.bind(this);
+
         this.modules = [
             new ThanosText(),      // Uses .intro__nav-item 
             new LinkAlias(),       // Uses data-url
             new WhoAmI(),          // Uses #whoami
-            new BackgroundLoader(),// Uses --bg-img-main 
-            new EasterEgg()        // Uses #easter-egg
+            new BackgroundLoader('public/media/BG/bg.gif', '--bg-img-main', this.onBackgroundImageLoaded),// Uses --bg-img-main 
+            // new BackgroundLoader('https://darshitlimbad.github.io/GitPages/Portfolio/media/BG/bg.gif', '--bg-img-main', this.onBackgroundImageLoaded),// Uses --bg-img-main 
+            // new EasterEgg()        // Uses #easter-egg
         ];    
         
         // Device detection
@@ -64,11 +68,31 @@ export default class App {
         });
         this.initBlurToggle();
         initScrollReveal('.card'); // General reveal for .card elements
+        document.body.classList.add('blur-bg-active'); // Activate blur
         
         // Page-specific initializations
-        const pageId = document.body.id;
-        if (pageId !== 'home' || this.deviceInfo.isMobile) {
-            document.body.classList.add('blur-bg-active'); // Activate blur on non-home pages by default
+        const pageId = document.body.id;        
+        if (pageId=== 'home'){
+            const tip = document.getElementById('tip') || document.getElementById('interaction-tip'); // make sure this matches your popup ID
+            const closeBtn = document.getElementById('tip-close-btn');
+            const storageKey = 'interactionTipDismissed';
+            
+            if (tip) {
+                tip.classList.remove('hidden');
+                
+                setTimeout(() => {
+                    tip.classList.add('hidden');
+                    localStorage.setItem(storageKey, 'true');
+                }, 5000);
+            }
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    tip.classList.add('hidden');
+                    localStorage.setItem(storageKey, 'true');
+                });
+            }
+
         }
         if (pageId === 'contact') {
             initScrollReveal('.js-reveal'); // For specific elements on contact page
@@ -85,6 +109,18 @@ export default class App {
             });
         } else {
             console.warn('Toggle blur button not found.'); 
+        }
+    }
+
+    onBackgroundImageLoaded(success, data, extra) {
+        if (success) {
+            console.log("🎉 Background loaded successfully:",data)
+            const pageId = document.body.id;        
+            if(pageId == "home" && !this.deviceInfo?.isMobile) {
+                document.body.classList.remove('blur-bg-active');
+            }
+        } else {
+            console.log('❌ Background failed to load:', data);
         }
     }
 }

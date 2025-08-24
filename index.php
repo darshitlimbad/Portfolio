@@ -23,11 +23,18 @@
         </footer>
     </div>
 
-    <div id="easter-egg" class="easter-egg">
+    <!-- <div id="easter-egg" class="easter-egg">
         <a rel="noopener" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="easter-egg__link" data-cursor-alias>
             Congratulations!!! You found an Easter Egg!!! <strong>Click me</strong>
         </a>
+    </div> -->
+
+    <div id="interaction-tip" class="interaction-tip">
+        <span class="message mobile-message">Tap the titles to explore.</span>
+        <span class="message desktop-message">Hover over the titles to explore.</span>
+        <button id="tip-close-btn" class="tip-close" aria-label="Close tip" data-cursor-pointer>×</button>
     </div>
+
 HTML;
 
     require_once __DIR__ . '/src/layouts/BaseLayout.php';

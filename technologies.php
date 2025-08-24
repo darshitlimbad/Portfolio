@@ -1,6 +1,6 @@
 <?php
     $pageId = "technologies";
-    $pageTitle = "My Tech Stack — Darshit Limbad";
+    $pageTitle = "My Tech Stack - Darshit Limbad";
 
     $pageMeta = [
         'description' => "An overview of the technologies and skills Darshit Limbad utilizes, including Unreal Engine, C++, PHP, JavaScript, Python, HTML5, CSS3, Git, and more.",

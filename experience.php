@@ -1,6 +1,6 @@
 <?php
     $pageId = "projects";
-    $pageTitle = "My Projects — Darshit Limbad";
+    $pageTitle = "My Projects - Darshit Limbad";
 
     $pageMeta = [
         'description' => "Explore a collection of Darshit Limbad's projects, showcasing skills in game development with Unreal Engine, Python scripting, full-stack web development, and more.",
@@ -22,7 +22,7 @@
                 $repoUrl = htmlspecialchars($project['repoUrl'] ?? '#', ENT_QUOTES, 'UTF-8');
                 $imageSrc = htmlspecialchars($project['imageSrc'] ?? '/public/media/placeholder.png', ENT_QUOTES, 'UTF-8');
                 $altText = htmlspecialchars($project['altText'] ?? 'Project image', ENT_QUOTES, 'UTF-8');
-                $title = htmlspecialchars($project['title'] ?? 'Project Title', ENT_QUOTES, 'UTF-8');
+                $title = $project['title'] ?? 'Project Title'; // Skip Sanitization
                 $description = nl2br(htmlspecialchars($project['description'] ?? 'Project description.', ENT_QUOTES, 'UTF-8'));
                 $glassEffect = htmlspecialchars($project['glassEffect'] ?? 'glass--dark', ENT_QUOTES, 'UTF-8');
 

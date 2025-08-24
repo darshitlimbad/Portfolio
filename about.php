@@ -1,6 +1,6 @@
 <?php
     $pageId = "about";
-    $pageTitle = "About Me — Darshit Limbad";
+    $pageTitle = "About Me - Darshit Limbad";
     
      $pageMeta = [
         'description' => "Learn more about Darshit Limbad, his journey into game and web development, and his passion for Game and Web Development.",

@@ -14,7 +14,7 @@
     "repoUrl": "https://github.com/darshitlimbad/Spoty-Your-Discord-Music-Companion",
     "imageSrc": "/public/media/projects/spoty-thumbnail.png",
     "altText": "Spoty Discord music bot interface",
-    "title": "Spoty – Discord Music Companion",
+    "title": "Spoty - Discord Music Companion",
     "description": "A feature-rich Discord music bot and companion site built with Python and Discord.py, offering high-quality audio streaming, queue management, subscription plans, and a dynamic web interface powered by HTML, CSS, JavaScript, PHP, and MySQL.",
     "tags": ["Python", "Discord.py", "FFmpeg", "API", "MySQL", "PHP", "HTML5", "CSS3", "JavaScript"],
     "glassEffect": "glass--dark"
@@ -44,7 +44,7 @@
     "repoUrl": "https://github.com/darshitlimbad/postReq",
     "imageSrc": "/public/media/projects/postreq-thumbnail.png",
     "altText": "Code snippet demonstrating postReq JS utility with progress tracking",
-    "title": "postReq — Custom JS Utility",
+    "title": "postReq - Custom JS Utility",
     "description": "A lightweight JavaScript function that mimics Fetch API behavior for PHP backends, providing standardized HTTP requests with built-in upload/download progress tracking, cancellation hooks, and configurable options.",
     "tags": ["JavaScript", "Utility", "Progress", "Fetch-Like"],
     "glassEffect": "glass--dark"
@@ -54,7 +54,7 @@
     "repoUrl": "https://github.com/Dhaivat-Raval/VedaWellness",
     "imageSrc": "/public/media/projects/veda-aesthetica-thumbnail.png",
     "altText": "Veda Aesthetica Clinic website screenshot showing responsive layout",
-    "title": "Veda Aesthetica — Official Website",
+    "title": "Veda Aesthetica - \n Official Website",
     "description": "A fast, SEO-optimized, and responsive website for Veda Aesthetica Clinic built using Astro, Tailwind CSS, and modern web development practices, featuring structured data, dynamic JSON-based content, and integration-ready components.",
     "tags": ["Astro", "TailwindCSS", "SEO", "Static Site", "JSON Content"],
     "glassEffect": "glass--dark"
